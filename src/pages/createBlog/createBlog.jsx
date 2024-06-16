@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import './createBlog.css';
-import Cookies from 'js-cookie';
+import './createBlog.css'
 
 export default function CreateBlog(){
     const [title, setTitle] = React.useState('');
@@ -12,7 +11,6 @@ export default function CreateBlog(){
     const [category, setCategory] = React.useState('');
     const [description, setDescription] = React.useState(''); 
     const navigate = useNavigate();
-    const token = Cookies.get('token')
 
     async function submitBlog(e) {
         e.preventDefault();
@@ -28,8 +26,7 @@ export default function CreateBlog(){
         try {
             const response = await axios.post('/post', data, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization : `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data'
                 },
                 withCredentials: true,
             });
