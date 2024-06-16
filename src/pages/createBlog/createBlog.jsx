@@ -26,7 +26,8 @@ export default function CreateBlog(){
         try {
             const response = await axios.post('/post', data, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    Authorization : `Bearer ${token}`,
                 },
                 withCredentials: true,
             });

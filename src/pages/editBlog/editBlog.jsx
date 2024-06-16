@@ -43,7 +43,8 @@ export default function EditBlog(){
         try {
             const response = await axios.put('/post', data, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    Authorization : `Bearer ${token}`,
                 },
                 withCredentials: true,
             });
