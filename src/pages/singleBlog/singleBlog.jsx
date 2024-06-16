@@ -15,7 +15,7 @@ export default function SingleBlog() {
   React.useEffect(() => {
     async function fetchSingleBlog() {
       try {
-        const response = await axios.get(`https://course-finder-app.onrender.com/post/${id}`, { withCredentials: true });
+        const response = await axios.get(`https://mern-back-at4a.onrender.com/post/${id}`, { withCredentials: true });
         setSingleBlogInfo(response.data);
       } catch (error) {
         console.error('Error fetching posts:', error);
@@ -28,7 +28,7 @@ export default function SingleBlog() {
   React.useEffect(() => {
     async function fetchComments() {
       try {
-        const response = await axios.get(`https://course-finder-app.onrender.com/post/${id}/comments`, { withCredentials: true });
+        const response = await axios.get(`https://mern-back-at4a.onrender.com/post/${id}/comments`, { withCredentials: true });
         setComments(response.data);
       } catch (error) {
         console.error('Error fetching comments:', error);
@@ -42,7 +42,7 @@ export default function SingleBlog() {
 
   return (
     <div>
-      <img src={`https://course-finder-app.onrender.com/${singleBlogInfo.image}`} className='course-image'/>
+      <img src={`https://mern-back-at4a.onrender.com/${singleBlogInfo.image}`} className='course-image'/>
       <div className='image-name-edit-followers'>
         <div className='image-name'>
           <img src={profile} alt="" className="image-name-img" />

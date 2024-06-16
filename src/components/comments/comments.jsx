@@ -9,7 +9,7 @@ export default function Comments({ postId, token}) {
   useEffect(() => {
     async function fetchComments() {
       try {
-        const response = await axios.get(`https://course-finder-app.onrender.com/post/${postId}/comments`, {
+        const response = await axios.get(`https://mern-back-at4a.onrender.com/post/${postId}/comments`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -25,7 +25,7 @@ export default function Comments({ postId, token}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`https://course-finder-app.onrender.com/post/${postId}/comment`, {
+      const response = await axios.post(`https://mern-back-at4a.onrender.com/post/${postId}/comment`, {
         commentText,
       }, {
         headers: {

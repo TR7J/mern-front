@@ -14,7 +14,7 @@ export default function EditBlog(){
     const navigate = useNavigate();
 
     React.useEffect(() => {
-        axios.get(`https://course-finder-app.onrender.com/post/${id}`)
+        axios.get(`https://mern-back-at4a.onrender.com/post/${id}`)
           .then(response => {
             const blogInfo = response.data;
             setTitle(blogInfo.title);

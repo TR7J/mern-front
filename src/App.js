@@ -13,7 +13,7 @@ import Navbar from './components/navbar/navbar'
 
 
 /* BACKEND URL */
-axios.defaults.baseURL = 'https://course-finder-app.onrender.com'
+axios.defaults.baseURL = 'https://mern-back-at4a.onrender.com'
 /*To ensure sending of the necessary session cookies along with requests to backend */
 axios.defaults.withCredentials = true
 
