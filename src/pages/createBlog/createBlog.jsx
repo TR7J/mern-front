@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import './createBlog.css'
+import './createBlog.css';
+import Cookies from 'js-cookie';
 
 export default function CreateBlog(){
     const [title, setTitle] = React.useState('');
@@ -11,6 +12,7 @@ export default function CreateBlog(){
     const [category, setCategory] = React.useState('');
     const [description, setDescription] = React.useState(''); 
     const navigate = useNavigate();
+    const token = Cookies.get('token')
 
     async function submitBlog(e) {
         e.preventDefault();

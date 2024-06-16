@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from 'react-hot-toast'
 import '../editBlog/editBlog.css'
+import Cookies from 'js-cookie';
 
 export default function EditBlog(){
     const {id} = useParams( )
@@ -12,6 +13,7 @@ export default function EditBlog(){
     const [category, setCategory] = React.useState('');
     const [description, setDescription] = React.useState(''); 
     const navigate = useNavigate();
+    const token = Cookies.get('token')
 
     React.useEffect(() => {
         axios.get(`https://mern-back-at4a.onrender.com/post/${id}`)
